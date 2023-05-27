@@ -16,7 +16,7 @@ import java.util.*
 class PokemonAdapter (val activity: Activity)
         : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
-        private val poems: MutableList<Pokemon> = mutableListOf()
+        private val pokemons: MutableList<Pokemon> = mutableListOf()
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.pokemon_list_item, parent, false)
@@ -24,17 +24,17 @@ class PokemonAdapter (val activity: Activity)
         }
 
         override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-            val poem = poems[position]
-            holder.bind(poem, activity)
+            val pokemon = pokemons[position]
+            holder.bind(pokemon, activity)
         }
 
         override fun getItemCount(): Int {
-            return poems.size
+            return pokemonss.size
         }
 
         fun setItems(items: List<Pokemon>) {
-            poems.clear()
-            poems.addAll(items)
+            pokemons.clear()
+            pokemons.addAll(items)
             notifyDataSetChanged()
         }
 
